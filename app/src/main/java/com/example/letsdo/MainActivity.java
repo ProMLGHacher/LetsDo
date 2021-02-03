@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -14,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView taskGroupsRV;
     static ArrayList<String> rvAdapterValuesList = new ArrayList<>();
     RVAdapter adapter;
-    String newTaskGroupName = "lol";
+    String newTaskGroupName;
+    CreateNewTaskGroupBottomSheetDialogFragment fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +40,26 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void createNewTaskGroup(View view) {
-        String add = newTaskGroupName + "\n" + " ";
-        rvAdapterValuesList.add(add);
-        adapter.notifyDataSetChanged();
+        fragment = new CreateNewTaskGroupBottomSheetDialogFragment();
+        fragment.show(getSupportFragmentManager(), "CREATE_NEW_TASK_GROUP");
+//        fragment.setSelectedTrue();
     }
+
+    public void createNewTaskGroupFromFragment(View view) {
+
+        newTaskGroupName = fragment.getTextFromEditText();
+
+
+        if (newTaskGroupName != null & !newTaskGroupName.equals("")) {
+            String add = newTaskGroupName + "\n" + " ";
+            rvAdapterValuesList.add(add);
+            adapter.notifyDataSetChanged();
+            fragment.dismiss();
+        }
+
+
+
+    }
+
 
 }
