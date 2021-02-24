@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void moveOnTaskActivity(View view) {
         Intent intent = new Intent(MainActivity.this, OnTask.class);
-        intent.putExtra("activityName", "hahaha");
+        int id = view.getId();
+        intent.putExtra("activityName", "id" + id);
         startActivity(intent);
     }
 }
