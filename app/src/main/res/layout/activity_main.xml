@@ -18,8 +18,10 @@
         app:layout_goneMarginBottom="123sp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/day_problens"
             android:layout_width="match_parent"
-            android:layout_height="55dp">
+            android:layout_height="55dp"
+            android:onClick="moveOnTaskActivity">
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -52,8 +54,10 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/favorite_problems"
             android:layout_width="match_parent"
-            android:layout_height="55dp">
+            android:layout_height="55dp"
+            android:onClick="moveOnTaskActivity">
 
             <ImageView
                 android:id="@+id/pageIco9"
@@ -87,8 +91,10 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/finished_problems"
             android:layout_width="match_parent"
-            android:layout_height="55dp">
+            android:layout_height="55dp"
+            android:onClick="moveOnTaskActivity">
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -121,8 +127,10 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/all_problems"
             android:layout_width="match_parent"
-            android:layout_height="55dp">
+            android:layout_height="55dp"
+            android:onClick="moveOnTaskActivity">
 
             <ImageView
                 android:id="@+id/imageView64"

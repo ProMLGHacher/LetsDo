@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Let\'sDo</string>
+    <string name="insert_into">INSERT INTO BD_NAME VALUES (\'app_name\')</string>
+    <string name="select_all_from_bd">SELECT * FROM BD_NAME;</string>
 </resources>

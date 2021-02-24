@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -56,5 +57,11 @@ public class MainActivity extends AppCompatActivity {
             adapter.notifyDataSetChanged();
             fragment.dismiss();
         }
+    }
+
+    public void moveOnTaskActivity(View view) {
+        Intent intent = new Intent(MainActivity.this, OnTask.class);
+        intent.putExtra("activityName", "hahaha");
+        startActivity(intent);
     }
 }
